@@ -1,0 +1,59 @@
+material OfficeSigns/Kitchen
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      lighting on
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0.1 0.1 0.1 1 2
+      texture_unit
+      {
+        texture kitchen_sign.png
+        filtering trilinear
+      }
+    }
+  }
+}
+
+material OfficeSigns/Toilet
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      lighting on
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0.1 0.1 0.1 1 2
+      texture_unit
+      {
+        texture toilet_sign.png
+        filtering trilinear
+      }
+    }
+  }
+}
+
+material OfficeSigns/Office
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      lighting on
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0.1 0.1 0.1 1 2
+      texture_unit
+      {
+        texture office_sign.png
+        filtering trilinear
+      }
+    }
+  }
+}

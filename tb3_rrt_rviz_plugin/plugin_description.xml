@@ -1,0 +1,31 @@
+<library path="tb3_rrt_rviz_plugin">
+
+  <!-- ── Tool plugins (click-on-map, like 2D Pose Estimate) ─────────────── -->
+
+  <class
+    name="tb3_rrt_rviz_plugin/SetRRTStartTool"
+    type="tb3_rrt_rviz_plugin::SetRRTStartTool"
+    base_class_type="rviz_common::Tool">
+    <description>
+      Click on the map to set the RRT planner start pose.
+      Click to place position, hold and drag to set heading.
+      Publishes geometry_msgs/PoseStamped on /start_pose.
+      Shortcut: S
+    </description>
+  </class>
+
+  <class
+    name="tb3_rrt_rviz_plugin/SetRRTGoalTool"
+    type="tb3_rrt_rviz_plugin::SetRRTGoalTool"
+    base_class_type="rviz_common::Tool">
+    <description>
+      Click on the map to set the RRT planner goal pose.
+      Click to place position, hold and drag to set heading.
+      Publishes geometry_msgs/PoseStamped on /goal_pose,
+      which immediately triggers the RRT planner node.
+      Shortcut: G
+    </description>
+  </class>
+
+
+</library>

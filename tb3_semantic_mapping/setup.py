@@ -1,0 +1,60 @@
+from setuptools import find_packages, setup
+import os
+from glob import glob
+
+package_name = 'tb3_semantic_mapping'
+
+setup(
+    name=package_name,
+    version='0.1.0',
+    packages=find_packages(exclude=['test']),
+    data_files=[
+        ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
+        (os.path.join('share', package_name, 'worlds'), glob('worlds/*.world')),
+        (os.path.join('share', package_name, 'rviz'), glob('rviz/*.rviz')),
+        (os.path.join('share', package_name, 'signs'), glob('signs/*.png')),
+        (os.path.join('share', package_name, 'models/office_signs'),
+         glob('models/office_signs/*.config') + glob('models/office_signs/*.sdf')),
+        (os.path.join('share', package_name, 'models/office_signs/materials/scripts'),
+         glob('models/office_signs/materials/scripts/*.material')),
+        (os.path.join('share', package_name, 'models/office_signs/materials/textures'),
+         glob('models/office_signs/materials/textures/*.png')),
+        (os.path.join('share', package_name, 'models/Kitchen'),
+         glob('models/Kitchen/*.config') + glob('models/Kitchen/*.sdf')),
+        (os.path.join('share', package_name, 'models/Kitchen/meshes'),
+         glob('models/Kitchen/meshes/*')),
+        (os.path.join('share', package_name, 'models/ConferenceTable'),
+         glob('models/ConferenceTable/*.config') + glob('models/ConferenceTable/*.sdf')),
+        (os.path.join('share', package_name, 'models/ConferenceTable/meshes'),
+         glob('models/ConferenceTable/meshes/*')),
+        (os.path.join('share', package_name, 'models/Laptop'),
+         glob('models/Laptop/*.config') + glob('models/Laptop/*.sdf')),
+        (os.path.join('share', package_name, 'models/Laptop/meshes'),
+         glob('models/Laptop/meshes/*')),
+        (os.path.join('share', package_name, 'models/Tv'),
+         glob('models/Tv/*.config') + glob('models/Tv/*.sdf')),
+        (os.path.join('share', package_name, 'models/Tv/meshes'),
+         glob('models/Tv/meshes/*')),
+        (os.path.join('share', package_name, 'models/WaterDispenser'),
+         glob('models/WaterDispenser/*.config') + glob('models/WaterDispenser/*.sdf')),
+        (os.path.join('share', package_name, 'models/WaterDispenser/meshes'),
+         glob('models/WaterDispenser/meshes/*')),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='manoj',
+    maintainer_email='manojvs1969@gmail.com',
+    description='Agentic semantic reasoning: tag rooms during exploration and navigate by text query',
+    license='Apache-2.0',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'semantic_tagger = tb3_semantic_mapping.semantic_tagger_node:main',
+            'semantic_query = tb3_semantic_mapping.semantic_query_node:main',
+            'demo_vlm = tb3_semantic_mapping.demo_mock_vlm:main',
+        ],
+    },
+)

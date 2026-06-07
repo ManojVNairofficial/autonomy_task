@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="office_signs"><static>true</static><link name="l"/></model>
+</sdf>

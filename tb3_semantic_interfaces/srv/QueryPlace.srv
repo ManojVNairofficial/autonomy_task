@@ -1,0 +1,9 @@
+# Request: a free-form natural-language query, e.g. "Where is the toilet?"
+string query
+---
+# Response
+bool found                       # true if a matching place was located
+string label                     # the canonical room label that matched
+geometry_msgs/PoseStamped pose   # location of that place in the map frame
+float64 confidence               # confidence of the stored semantic observation
+string message                   # status / explanation
